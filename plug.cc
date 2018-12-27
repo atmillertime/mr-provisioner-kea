@@ -384,7 +384,7 @@ int subnet4_select(CalloutHandle& handle) {
     try {
         Pkt4Ptr query;
         handle.getArgument("query4", query);
-        HWAddrPtr hwaddr = query->getMAC(HWAddr::HWADDR_SOURCE_ANY);
+        HWAddrPtr hwaddr = query->getHWAddr();
 
         Subnet4Ptr subnet;
         const Subnet4Collection *subnets;
