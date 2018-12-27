@@ -361,7 +361,7 @@ int pkt4_receive(CalloutHandle& handle) {
         Pkt4Ptr query;
         handle.getArgument("query4", query);
         uint8_t packet_type = query->getType();
-        HWAddrPtr hwaddr = query->getMAC(HWAddr::HWADDR_SOURCE_ANY);
+        HWAddrPtr hwaddr = query->getHWAddr();
 
         // Store the id we search with so it is available down the road.
         handle.setContext(query_hwaddr_label, hwaddr);
